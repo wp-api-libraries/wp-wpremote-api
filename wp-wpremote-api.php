@@ -29,6 +29,13 @@ if ( ! class_exists( 'WpRemoteAPI' ) ) {
 	class WpRemoteAPI {
 		
 		/**
+		 * API Key
+		 *
+		 * @var string
+		 */
+		static private $apikey;
+		
+		/**
 		 * BaseAPI Endpoint
 		 *
 		 * @var string
@@ -42,7 +49,9 @@ if ( ! class_exists( 'WpRemoteAPI' ) ) {
 		 * @access public
 		 * @return void
 		 */
-		public function __construct() {
+		public function __construct( $apikey ) {
+			
+			static::$apikey = $apikey;
 		}
 		
 		/**
